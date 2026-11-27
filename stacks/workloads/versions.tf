@@ -1,0 +1,17 @@
+terraform {
+  required_version = ">= 1.11.0, < 2.0.0"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 6.0"
+    }
+    kubernetes = {
+      source  = "hashicorp/kubernetes"
+      version = "~> 3.0"
+    }
+  }
+
+  # Completed by scripts/tf.sh: key = <env>/workloads.tfstate
+  backend "s3" {}
+}
